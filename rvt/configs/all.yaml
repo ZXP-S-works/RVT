@@ -1,5 +1,5 @@
 exp_id: rvt
-tasks: stack_blocks
+tasks: place_wine_at_rack_location
 bs: 3
 num_workers: 3
 epochs: 15

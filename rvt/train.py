@@ -166,10 +166,12 @@ def experiment(rank, cmd_args, devices, port):
     BATCH_SIZE_TRAIN = exp_cfg.bs
     NUM_TRAIN = 10
     # to match peract, iterations per epoch
-    TRAINING_ITERATIONS = int(10000 // (exp_cfg.bs * len(devices) / 16))
+    TRAINING_ITERATIONS = 1
     EPOCHS = exp_cfg.epochs
     TRAIN_REPLAY_STORAGE_DIR = "replay/replay_train"
     TEST_REPLAY_STORAGE_DIR = "replay/replay_val"
+    # TRAIN_REPLAY_STORAGE_DIR = "/home/zxp/projects/C2F_bi_equi/c2f_bi_equi_data/train"
+    # TEST_REPLAY_STORAGE_DIR = "/home/zxp/projects/C2F_bi_equi/c2f_bi_equi_data/val"
     log_dir = get_logdir(cmd_args, exp_cfg)
     tasks = get_tasks(exp_cfg)
     print("Training on {} tasks: {}".format(len(tasks), tasks))
