@@ -122,6 +122,8 @@ python eval.py --eval-episodes 25 --peract_official --peract_model_dir runs/pera
 ```
 
 ## Gotchas
+- When there is "cannot sample batch size=1" error, then you can rerun the code so it can load updated dataset.
+
 - If you get qt plugin error like `qt.qpa.plugin: Could not load the Qt platform plugin "xcb"`, try uninstalling opencv-python and installing opencv-python-headless
 
 ```
