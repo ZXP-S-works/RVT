@@ -12,7 +12,7 @@ _C.exp_id = "def"
 _C.resume = ""
 # bs per device, effective bs is scaled by num device
 _C.bs = 4
-_C.epochs = 20
+_C.epochs = 15
 # number of dataloader workers, >= 0
 _C.num_workers = 0
 # 'transition_uniform' or 'task_uniform'
