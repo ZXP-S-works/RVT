@@ -4,8 +4,9 @@ cd ../rvt
 python train.py \
       --exp_cfg_path=configs/all.yaml \
       --exp_cfg_opts="tasks ${task_name}" \
-      --log-dir=runs/$date \
-      --device=0,1
+      --log-dir=runs/${date}/${n_demo} \
+      --device=0,1 \
+      --n_demo=${n_demo}
 }
 
 task_names=('place_cups' 'light_bulb_in' 'place_wine_at_rack_location' 'put_groceries_in_cupboard'
@@ -16,10 +17,13 @@ task_names=('place_cups' 'light_bulb_in' 'place_wine_at_rack_location' 'put_groc
 #task_names=('place_cups' 'place_wine_at_rack_location' 'sweep_to_dustpan_of_size' 'stack_blocks' 'close_jar'
 #'insert_onto_square_peg' 'open_drawer' 'stack_cups')
 
-#task_names=('place_cups' 'stack_cups')
+#task_names=('place_cups')
 
-date=1222
-for task_name in "${task_names[@]}"
-  do
-    run
+date=1226
+for n_demo in 100
+do
+  for task_name in "${task_names[@]}"
+    do
+      run
+    done
   done
