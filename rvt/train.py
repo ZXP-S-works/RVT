@@ -166,7 +166,7 @@ def experiment(rank, cmd_args, devices, port):
     BATCH_SIZE_TRAIN = exp_cfg.bs
     NUM_TRAIN = cmd_args.n_demo
     # to match peract, iterations per epoch
-    TRAINING_ITERATIONS = 1
+    TRAINING_ITERATIONS = 1000
     EPOCHS = exp_cfg.epochs
     TRAIN_REPLAY_STORAGE_DIR = "replay/replay_train"
     TEST_REPLAY_STORAGE_DIR = "replay/replay_val"
