@@ -106,6 +106,7 @@ class TensorboardManager:
                 else:
                     assert False
             else:
+                print(split, k, v, step)
                 self.writer.add_scalar("%s_%s" % (split, k), v, step)
 
     def close(self):
