@@ -374,7 +374,12 @@ def fill_replay(
                 descs = pickle.load(f)
 
             # extract keypoints
-            episode_keypoints = keypoint_discovery(demo)
+            # episode_keypoints = keypoint_discovery(demo)
+
+            episode_keypoints = demo[-1].misc['keypoint_idxs']
+            episode_keypoints[:-1] += 1
+            episode_keypoints = episode_keypoints.tolist()
+
             next_keypoint_idx = 0
             for i in range(len(demo) - 1):
                 if not demo_augmentation and i > 0:
