@@ -58,8 +58,8 @@ def create_replay(
                 "%s_rgb" % cname,
                 (
                     3,
-                    IMAGE_SIZE,
-                    IMAGE_SIZE,
+                    IMAGE_SIZE[0],
+                    IMAGE_SIZE[1],
                 ),
                 np.float32,
             )
@@ -69,8 +69,8 @@ def create_replay(
                 "%s_depth" % cname,
                 (
                     1,
-                    IMAGE_SIZE,
-                    IMAGE_SIZE,
+                    IMAGE_SIZE[0],
+                    IMAGE_SIZE[1],
                 ),
                 np.float32,
             )
@@ -80,8 +80,8 @@ def create_replay(
                 "%s_point_cloud" % cname,
                 (
                     3,
-                    IMAGE_SIZE,
-                    IMAGE_SIZE,
+                    IMAGE_SIZE[0],
+                    IMAGE_SIZE[1],
                 ),
                 np.float32,
             )

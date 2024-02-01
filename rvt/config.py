@@ -31,7 +31,7 @@ _C.peract.lr_cos_dec = False
 _C.peract.add_rgc_loss = True
 _C.peract.num_rotation_classes = 72
 _C.peract.transform_augmentation = True
-_C.peract.transform_augmentation_xyz = [0.1, 0.1, 0.1]
+_C.peract.transform_augmentation_xyz = [0.05, 0.05, 0.05]
 _C.peract.transform_augmentation_rpy = [0.0, 0.0, 20.0]
 
 # arguments present in only rvt and not peract

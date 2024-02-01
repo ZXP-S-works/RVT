@@ -18,10 +18,10 @@ python train.py \
 #'put_money_in_safe' 'meat_off_grill' 'open_drawer' 'reach_and_drag' 'push_buttons' 'stack_cups' 'turn_tap'
 #'put_item_in_drawer' 'place_shape_in_shape_sorter')
 
-task_names=('place_cups')
+task_names=('golf_swing' 'flip_steak' 'slide_plate')
 
-date=0116
-for n_demo in 10 100
+date=0201
+for n_demo in 10
 do
   for task_name in "${task_names[@]}"
     do

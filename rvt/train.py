@@ -168,7 +168,7 @@ def experiment(rank, cmd_args, devices, port):
     # to match peract, iterations per epoch
     TRAINING_ITERATIONS = 1000
     EPOCHS = exp_cfg.epochs
-    TRAIN_REPLAY_STORAGE_DIR = "replay/replay_train"
+    TRAIN_REPLAY_STORAGE_DIR = "replay/realworld_train"
     TEST_REPLAY_STORAGE_DIR = "replay/replay_val"
     # TRAIN_REPLAY_STORAGE_DIR = "/home/zxp/projects/C2F_bi_equi/c2f_bi_equi_data/train"
     # TEST_REPLAY_STORAGE_DIR = "/home/zxp/projects/C2F_bi_equi/c2f_bi_equi_data/val"
@@ -217,7 +217,7 @@ def experiment(rank, cmd_args, devices, port):
 
         agent = rvt_agent.RVTAgent(
             network=rvt,
-            image_resolution=[IMAGE_SIZE, IMAGE_SIZE],
+            image_resolution=IMAGE_SIZE,
             add_lang=mvt_cfg.add_lang,
             scene_bounds=SCENE_BOUNDS,
             cameras=CAMERAS,
