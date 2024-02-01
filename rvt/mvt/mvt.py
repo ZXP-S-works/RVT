@@ -228,12 +228,20 @@ class MVT(nn.Module):
         """
 
         self.verify_inp(pc, img_feat, proprio, lang_emb, img_aug)
+        down_sample_step = 16
+        pc = [p[::down_sample_step] for p in pc]
+        img_feat = [imf[::down_sample_step] for imf in img_feat]
         img = self.render(
             pc,
             img_feat,
             img_aug,
             dyn_cam_info=None,
         )
+        # import matplotlib.pyplot as plt
+        #
+        # plt.figure()
+        # plt.imshow(img[0, 0, 0].clone().detach().cpu())
+        # plt.show()
         out = self.mvt1(img=img, proprio=proprio, lang_emb=lang_emb, **kwargs)
         return out
 

@@ -3,6 +3,7 @@
 # Licensed under the NVIDIA Source Code License [see LICENSE for details].
 
 import pprint
+import time
 
 import torch
 import torchvision
@@ -475,6 +476,7 @@ class RVTAgent:
         eval_log: bool = False,
         reset_log: bool = False,
     ) -> dict:
+        time.sleep(0.2)  # ZXP avoid GPU overheat
         assert replay_sample["rot_grip_action_indicies"].shape[1:] == (1, 4)
         assert replay_sample["ignore_collisions"].shape[1:] == (1, 1)
         assert replay_sample["gripper_pose"].shape[1:] == (1, 7)
@@ -593,7 +595,8 @@ class RVTAgent:
         action_trans = self.get_action_trans(
             wpt_local, pts, out, dyn_cam_info, dims=(bs, nc, h, w)
         )
-
+        # q_trans.shape??
+        # torch.Size([3, 48400, 5])
         loss_log = {}
         if backprop:
             # cross-entropy loss

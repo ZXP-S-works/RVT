@@ -143,7 +143,7 @@ def load_agent(
 
             agent = rvt_agent.RVTAgent(
                 network=rvt.to(device),
-                image_resolution=[IMAGE_SIZE, IMAGE_SIZE],
+                image_resolution=[IMAGE_SIZE[0], IMAGE_SIZE[1]],
                 add_lang=mvt_cfg.add_lang,
                 scene_bounds=SCENE_BOUNDS,
                 cameras=CAMERAS,
